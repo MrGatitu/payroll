@@ -12,8 +12,9 @@ public class Employees {
     
         protected String name;
         protected  String employeeId;
+        String message = "Hope You Enjoy Your Work";
         //protected double hoursWorked;
-        double rate = 1000;
+        //double rate = 1000;
 
         public AbstractEmployee(String name, String employeeId){
             this.name=name;
@@ -42,7 +43,7 @@ public class Employees {
     public class FullTimeEmployee extends AbstractEmployee{
 
         double monthlySalary;
-        static String message = "Hope You Enjoy Your Work";
+        
 
         public FullTimeEmployee(String name, String employeeId, double monthlySalary) {
 
@@ -53,7 +54,7 @@ public class Employees {
 
         @Override
         public String work(){
-            return message;
+            return super.message;
         }
 
         @Override
@@ -69,20 +70,29 @@ public class Employees {
         private double hourlyRate;
         private double hoursWorked;
 
-        public PartTimeEmployees(double hourlyRate, double hoursWorked){
+        public PartTimeEmployees(String name,String employeeId,double hourlyRate, double hoursWorked){
 
             super(name, employeeId);
             this.hourlyRate = hourlyRate;
             this.hoursWorked = hoursWorked;
 
         }
+
+        @Override
+        public String work(){
+            return super.message;
+        }
         
         @Override
         public double calculateSalary(){
             return hourlyRate * hoursWorked;
         }
-    
-        
+
+        @Override
+        public String getEmployeeInfo(){
+            return "name: " + name + "\nEmployee Id: " + employeeId + " \nHours works: "
+            + hoursWorked +""+"\nHourly wage: " + calculateSalary();
+        }  
     }
     
     

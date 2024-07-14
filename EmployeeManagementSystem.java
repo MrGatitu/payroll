@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+
+import  java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeManagementSystem {
@@ -12,8 +13,8 @@ public class EmployeeManagementSystem {
         employees.add(fullTimeEmployee);
         employees.add(partTimeEmployee);
         
-       // Payroll payroll = new Payroll();
-       // payroll.processPayroll(employees);
+       Payroll payroll = new Payroll();
+       payroll.processPayroll(employees);
     }
 }
 
